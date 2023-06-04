@@ -1,14 +1,7 @@
-import { useContext, useState } from "react";
-import { ThemeContext } from "../Context/Theme";
+import { useTheme } from "../Context/useTheme";
 
 const Background = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
-  const [isChecked, setIsChecked] = useState(true);
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-    toggleTheme();
-  };
+  const { theme, isChecked, handleCheckboxChange } = useTheme();
 
   return (
     <>
